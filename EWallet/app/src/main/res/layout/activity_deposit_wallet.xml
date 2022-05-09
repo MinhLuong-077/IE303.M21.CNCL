@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DepositWallet">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:background="#F3E3E3"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        tools:context=".DepositWallet">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/text55"
+                android:drawableStart="@drawable/ic_baseline_security_24"
+                android:drawablePadding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Số dư ví:"
+                android:textColor="#908F91"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/text5"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4pt"
+                android:text="5000000 đ"
+                android:textColor="#908F91"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:id="@+id/stk"
+            android:transitionName="Amount to deposit"
+            android:hint="0đ"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/continue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="200000đ"
+                android:transitionName="200000đ"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+            <Button
+                android:id="@+id/continue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="200000đ"
+                android:transitionName="500000đ"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+            <Button
+                android:id="@+id/continue3"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200000đ"
+                android:transitionName="1000000đ"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/mytextview1"
+            android:drawableStart="@drawable/ic_baseline_security_24"
+            android:drawablePadding="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="NGUỒN TIỀN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <CheckBox
+                android:id="@+id/checkbox_id"
+                android:drawableStart="@drawable/ic_baseline_security_24"
+                android:drawablePadding="20dp"
+                android:text="TECHCOMBANK \nMiễn phí thanh toán"
+                android:checked="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:id="@+id/checkbox_id1"
+                android:drawableStart="@drawable/ic_baseline_security_24"
+                android:drawablePadding="20dp"
+                android:text="BIDV \nMiễn phí thanh toán"
+                android:checked="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnContinueDeposit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nạp tiền"
+        android:transitionName="Nạp tiền"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+</LinearLayout>

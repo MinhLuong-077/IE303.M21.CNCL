@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".BankInformation">
+
+    <TextView
+        android:id="@+id/mytextview"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="Xác thực thẻ khi liên kết"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/mytextview2"
+        android:drawableStart="@drawable/ic_baseline_security_24"
+        android:drawablePadding="20dp"
+        android:text="Để đảm bảo thẻ còn hoạt động, NONO sẽ chuyển từ thẻ vào Ví của bạn 1$ (Bạn có thể dùng để thanh toán các dịch vị trên NONO sau đó)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/mytextview6"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="ENTER ATM CARD INFORMATION"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#000000"
+        android:id="@+id/stk"
+        android:transitionName="Account number"
+        android:hint="Account number"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#000000"
+        android:layout_marginTop="15pt"
+        android:id="@+id/name"
+        android:transitionName="Customer first and last name"
+        android:hint="Customer first and last name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15pt"
+        android:padding="5dp"
+        android:textColor="#000000"
+        android:id="@+id/keyname"
+        android:transitionName="CMND/CCCD/Passport"
+        android:hint="CMND/CCCD/Passport"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/mytextview1"
+        android:drawableStart="@drawable/ic_baseline_security_24"
+        android:drawablePadding="20dp"
+        android:text="Mọi thông tin khách hàng đều được mã hóa để bảo mật thông tin khách hàng."
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btnContinue1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:transitionName="continue"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+</LinearLayout>
