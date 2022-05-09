@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "161671668134",
+    "firebase_url": "https://nono-wallet-a74b0-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "nono-wallet-a74b0",
+    "storage_bucket": "nono-wallet-a74b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161671668134:android:f1bbcfb5137e2031d16f67",
+        "android_client_info": {
+          "package_name": "com.example.ewallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161671668134-d0i59knfpjaitgna37nvoci11uei4ld2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3wgAixJ_emQPYxGsyOn6_cEHrFrIGtrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161671668134-d0i59knfpjaitgna37nvoci11uei4ld2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
