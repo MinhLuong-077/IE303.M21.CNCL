@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".RegisterActivity">
+    android:theme="@style/Theme.EWallet">
 
     <ImageView
         android:id="@+id/logo_img"
@@ -23,7 +22,8 @@
         android:transitionName="greeting"
         android:textColor="@color/primary_light"
         android:fontFamily="@font/bungee"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:includeFontPadding="false"/>
 
     <TextView
         android:id="@+id/slogan"
