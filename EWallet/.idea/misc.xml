@@ -12,6 +12,10 @@
         <entry key="..\:/Java/Final/IE303/EWallet/app/src/main/res/layout/fragment_home.xml" value="0.21195652173913043" />
         <entry key="..\:/Java/Final/IE303/EWallet/app/src/main/res/layout/fragment_wallet.xml" value="0.21195652173913043" />
         <entry key="..\:/Java/Final/IE303/EWallet/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_deposit.xml" value="0.2630208333333333" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_home.xml" value="0.4041666666666667" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_wallet.xml" value="0.2630208333333333" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/toolbar.xml" value="0.403125" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.182" />
         <entry key="app/src/main/res/drawable/border_radius.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/circlebtn.xml" value="0.2075" />
@@ -39,17 +43,13 @@
         <entry key="app/src/main/res/drawable/ic_shopping.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/ic_telecom.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/ic_travel.xml" value="0.156" />
-        <entry key="app/src/main/res/drawable/ic_user.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/ic_volunteer.xml" value="0.156" />
         <entry key="app/src/main/res/drawable/ic_wallet.xml" value="0.1505" />
         <entry key="app/src/main/res/drawable/ic_withdraw.xml" value="0.1765" />
-        <entry key="app/src/main/res/drawable/logo.xml" value="0.1575" />
-        <entry key="app/src/main/res/drawable/minilogo.xml" value="0.14" />
         <entry key="app/src/main/res/drawable/onvisibility.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/roundframe.xml" value="0.2965" />
         <entry key="app/src/main/res/drawable/show_pwd_selector.xml" value="0.1425" />
         <entry key="app/src/main/res/layout-v26/fragment_home.xml" value="0.286231884057971" />
-        <entry key="app/src/main/res/layout/activity_deposit.xml" value="0.37856328392246297" />
         <entry key="app/src/main/res/layout/activity_flash.xml" value="0.29393115942028986" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2753623188405797" />
