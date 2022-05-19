@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_dark"
-    tools:context=".FlashActivity">
+    tools:context=".FlashActivity"
+    android:theme="@style/Theme.EWallet">
 
     <ImageView
         android:id="@+id/logo_img"

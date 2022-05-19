@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/layout_corner"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/mini_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:minWidth="24dp"
+                        android:minHeight="24dp"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/minilogo" />
+                    <TextView
+                        android:id="@id/label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Balance:"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/proxima_nova"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/balance"/>
+                    <TextView
+                        android:id="@+id/balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3000"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/proxima_nova"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:paddingRight="10dp"/>
+
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Amount"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0đ"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="200.000đ"
+                        android:textAllCaps="false"
+                        android:layout_weight="1"
+                        android:layout_margin="2dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500.000đ"
+                        android:textAllCaps="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_weight="1"
+                        android:layout_margin="2dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.000.000đ"
+                        android:textAllCaps="false"
+                        android:layout_alignParentEnd="true"
+                        android:layout_weight="1"
+                        android:layout_margin="2dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Affiliated Bank"
+        android:textSize="15sp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:padding="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="60dp"
+            app:icon="@drawable/minilogo"
+            app:iconPadding="20dp"
+            android:text="Vietcombank"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="60dp"
+            app:icon="@drawable/add"
+            app:iconPadding="20dp"
+            android:text="Add bank"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            app:iconTint="@color/primary_light"
+            android:textColor="@color/primary_light"
+            android:backgroundTint="@color/white"
+            app:strokeColor="@color/primary_light"
+            app:strokeWidth="2dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:height="60dp"
+            app:icon="@drawable/currency"
+            app:iconPadding="20dp"
+            android:text="Deposit at store"
+            android:textAllCaps="false"
+            android:textAlignment="textStart"
+            app:iconTint="@color/primary_light"
+            android:textColor="@color/primary_light"
+            android:backgroundTint="@color/white"
+            app:strokeColor="@color/primary_light"
+            app:strokeWidth="2dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:padding="20dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deposit" />
+
+    </LinearLayout>
+
+</LinearLayout>

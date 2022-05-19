@@ -13,8 +13,5 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/proxima_nova</item>
-
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle"></item>
     </style>
 </resources>
