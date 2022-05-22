@@ -142,7 +142,7 @@ public class OTPBank extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             addDataBankFirebase();
-                            startActivity(new Intent(OTPBank.this, DepositWallet.class));
+                            startActivity(new Intent(OTPBank.this, Deposit.class));
                             finish();
                         } else {
                             // if the code is not correct then we are

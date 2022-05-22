@@ -3,6 +3,7 @@ package com.example.ewallet;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -11,7 +12,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.ewallet.model.BankAcount;
+import com.example.ewallet.model.FireBaseUserBank;
+import com.example.ewallet.model.UserFirebase;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.auth.User;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,8 +42,13 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private Button depositBtn;
-
+    private FireBaseUserBank fireBaseUserBank = new FireBaseUserBank ();
+    private DatabaseReference mDatabase;
+    private UserFirebase userFirebase = new UserFirebase();
+//    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//    private String uid= user.getUid();
     public HomeFragment() {
+        setBankUser();
         // Required empty public constructor
     }
 
@@ -66,19 +83,36 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        depositBtn = v.findViewById(R.id.deposit);
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
+        depositBtn = v.findViewById(R.id.deposit1);
         depositBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), Deposit.class));
+                Intent intent = new Intent(getActivity(), Deposit.class);
+                intent.putExtra("keyBank",fireBaseUserBank.getBank());
+                startActivity(intent);
+
             }
         });
 
         return v;
     }
 
+    private void setBankUser() {
+//        playButton.setText("No bank");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Bank").child(userFirebase.getUid());
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                fireBaseUserBank.setAccount(snapshot.child("account").getValue().toString());
+                fireBaseUserBank.setBank(snapshot.child("bank").getValue().toString());
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+    }
 
 }

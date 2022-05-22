@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.ewallet.api.ApiBank;
 import com.example.ewallet.model.BankAcount;
+import com.example.ewallet.model.UserFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -46,14 +47,11 @@ public class BankInformation extends AppCompatActivity {
     private  String txt_account;
     private  String txt_name;
     private String txt_keyId;
-
-    private int txt_otp;
     private DatabaseReference mDatabase;
     private boolean success = false;
     public static final int getStatusCode = 200;
     public static final float minimumMoney = 50000;
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private String uid= user.getUid();
+    private UserFirebase userFirebase = new UserFirebase();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -87,8 +85,7 @@ public class BankInformation extends AppCompatActivity {
     }
 
     private void checkBankUser() {
-//        uid = user.getUid();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Bank").child(uid);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Bank").child(userFirebase.getUid());
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -123,7 +120,7 @@ public class BankInformation extends AppCompatActivity {
                        if(bankAcount.getMoney()>=minimumMoney){
                            if(!success){
                                Intent intent = new Intent(BankInformation.this, OTPBank.class);
-                               intent.putExtra("keyUid",uid);
+                               intent.putExtra("keyUid",userFirebase.getUid());
                                intent.putExtra("keyAccountBank",txt_accountBank);
                                intent.putExtra("keyNameBank",txt_nameBank);
                                intent.putExtra("keyIdBank",txt_IdBank );
