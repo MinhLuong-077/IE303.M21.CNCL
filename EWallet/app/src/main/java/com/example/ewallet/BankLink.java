@@ -15,11 +15,14 @@ public class BankLink extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_link);
-        button = findViewById(R.id.agribank);
+        button = findViewById(R.id.BIDV);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BankLink.this, BankInformation.class));
+                Intent intent = new Intent(BankLink.this, BankInformation.class);
+                intent.putExtra("keyBank",button.getText().toString());
+                startActivity(intent);
+
             }
         });
 

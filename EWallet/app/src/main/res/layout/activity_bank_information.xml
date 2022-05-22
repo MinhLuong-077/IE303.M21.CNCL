@@ -12,7 +12,7 @@
         android:id="@+id/mytextview"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:text="Xác thực thẻ khi liên kết"
+        android:text="Card authentication when linking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -20,7 +20,7 @@
         android:id="@+id/mytextview2"
         android:drawableStart="@drawable/ic_baseline_security_24"
         android:drawablePadding="20dp"
-        android:text="Để đảm bảo thẻ còn hoạt động, NONO sẽ chuyển từ thẻ vào Ví của bạn 1$ (Bạn có thể dùng để thanh toán các dịch vị trên NONO sau đó)"
+        android:text="To make sure the card is still active, NONO will check that your card must have more than 50000 VND (You can use it to pay for services on NONO later)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -35,11 +35,12 @@
         android:layout_height="wrap_content"
         />
     <com.google.android.material.textfield.TextInputLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:textColor="#000000"
-        android:id="@+id/stk"
+        android:id="@+id/account"
         android:transitionName="Account number"
         android:hint="Account number"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -73,7 +74,7 @@
         android:layout_marginTop="15pt"
         android:padding="5dp"
         android:textColor="#000000"
-        android:id="@+id/keyname"
+        android:id="@+id/keyId"
         android:transitionName="CMND/CCCD/Passport"
         android:hint="CMND/CCCD/Passport"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -89,7 +90,7 @@
         android:id="@+id/mytextview1"
         android:drawableStart="@drawable/ic_baseline_security_24"
         android:drawablePadding="20dp"
-        android:text="Mọi thông tin khách hàng đều được mã hóa để bảo mật thông tin khách hàng."
+        android:text="All customer information is encrypted to secure customer information."
         android:layout_width="match_parent"
         android:layout_marginBottom="30dp"
         android:layout_marginTop="40dp"
