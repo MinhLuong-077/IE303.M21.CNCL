@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".OTPBank">
+    <TextView
+        android:id="@+id/mytextview2"
+        android:layout_margin="20dp"
+        android:drawableStart="@drawable/ic_baseline_security_24"
+        android:drawablePadding="20dp"
+        android:text="The bank just sent an OTP password to the phone number you registered with the bank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#000000"
+        android:id="@+id/stk"
+        android:transitionName="Verification codes OTP"
+        android:hint="Verification codes OTP"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEDED"
+
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/mytextview221"
+            android:padding="20dp"
+            android:drawableStart="@drawable/ic_baseline_security_24"
+            android:drawablePadding="10dp"
+            android:textSize="20dp"
+            android:text="CARD/ACCOUNT INFORMATION"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#FFFFFF"
+            android:layout_marginBottom="350dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/mytextview2212"
+                android:padding="10dp"
+                android:text="Số tài khoản \n\nHọ và tên khách hàng \n\nCMNN/CCCD/Hộ chiếu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/mytextview22122"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="50dp"
+                android:text="21121221212112 \n\nDuong Minh Luong \n\n23323232233223"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnContinue2"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+            android:drawablePadding="20dp"
+            android:text="Continue"
+            android:transitionName="continue"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+</LinearLayout >
