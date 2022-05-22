@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".WalletFragment">
+    tools:context=".WalletFragment"
+    android:theme="@style/Theme.EWallet">
 
     /**
     * Design this fragment again according to the code in equivalent file!

@@ -13,6 +13,9 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.EWallet">
         <activity
+            android:name=".Deposit"
+
+            android:exported="false" />
             android:name=".TransactionInvoice"
             android:exported="false" />
         <activity
