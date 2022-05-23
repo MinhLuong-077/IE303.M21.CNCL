@@ -132,16 +132,17 @@
         android:padding="20dp">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/bank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="60dp"
             app:icon="@drawable/minilogo"
             app:iconPadding="20dp"
-            android:text="Vietcombank"
             android:textAllCaps="false"
             android:textAlignment="textStart"/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddBank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="60dp"
@@ -181,6 +182,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDepositWallet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Deposit" />
