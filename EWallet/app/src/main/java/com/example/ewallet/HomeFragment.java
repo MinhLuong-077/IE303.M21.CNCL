@@ -43,11 +43,11 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private Button depositBtn;
-    private FireBaseUserBank fireBaseUserBank = new FireBaseUserBank ();
+    private FireBaseUserBank fireBaseUserBank = new FireBaseUserBank();
     private DatabaseReference mDatabase, m2Database;
     private UserFirebase userFirebase = new UserFirebase();
-//    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//    private String uid= user.getUid();
+    // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    // private String uid= user.getUid();
 
     public HomeFragment() {
         setBankUser();
@@ -84,7 +84,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+            Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
@@ -93,10 +93,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Deposit.class);
-                intent.putExtra("keyBank",fireBaseUserBank.getBank());
-                intent.putExtra("keyId",fireBaseUserBank.getId());
-                intent.putExtra("keyAccount",fireBaseUserBank.getAccount());
-                intent.putExtra("keyBalance",userFirebase.getBalance());
+                intent.putExtra("keyBank", fireBaseUserBank.getBank());
+                intent.putExtra("keyId", fireBaseUserBank.getId());
+                intent.putExtra("keyAccount", fireBaseUserBank.getAccount());
+                intent.putExtra("keyBalance", userFirebase.getBalance());
+                intent.putExtra("success", false);
                 startActivity(intent);
 
             }
@@ -106,30 +107,33 @@ public class HomeFragment extends Fragment {
     }
 
     private void setBankUser() {
-//        playButton.setText("No bank");
+        // playButton.setText("No bank");
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Bank").child(userFirebase.getUid());
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                fireBaseUserBank.setAccount(snapshot.child("account").getValue().toString());
-                fireBaseUserBank.setBank(snapshot.child("bank").getValue().toString());
-                fireBaseUserBank.setId(snapshot.child("id").getValue().toString());
+                    fireBaseUserBank.setAccount(snapshot.child("account").getValue().toString());
+                    fireBaseUserBank.setBank(snapshot.child("bank").getValue().toString());
+                    fireBaseUserBank.setId(snapshot.child("id").getValue().toString());
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
     }
-    private void setUsetInfo(){
+
+    private void setUsetInfo() {
         m2Database = FirebaseDatabase.getInstance().getReference().child("Users").child(userFirebase.getUid());
         m2Database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 userFirebase.setBalance(snapshot.child("balance").getValue(Long.class));
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

@@ -59,6 +59,7 @@
                 android:layout_height="match_parent">
 
                 <Button
+
                     android:id="@+id/BIDV"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
@@ -71,6 +72,8 @@
                     android:textSize="12sp" />
 
                 <Button
+                    android:id="@+id/Agribank"
+                    android:onClick="onClick"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -79,9 +82,12 @@
                     android:text="Agribank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:ignore="OnClick" />
 
                 <Button
+
+                    android:id="@+id/VietinBank"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -93,6 +99,7 @@
                     android:textSize="12sp" />
 
                 <Button
+                    android:id="@+id/Vietcombank"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

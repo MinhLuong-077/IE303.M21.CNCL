@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ewallet.model.BankAcount;
+import com.example.ewallet.model.UserFirebase;
 import com.example.ewallet.utils.DAOUsers;
 import com.example.ewallet.utils.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,36 +40,41 @@ public class OTPBank extends AppCompatActivity {
     private String valueName;
     private String valueIdBank;
     private String valueBank;
+    private Long valueBalance;
     private String valueTelephone;
     private TextInputLayout txtVerOTP;
     private String verificationId;
-//    private float valueMoney;
+
+    // private float valueMoney;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otpbank);
         button = findViewById(R.id.btnContinueVerOTP);
         txtVerOTP = findViewById(R.id.verOTP);
-        otpBank();
         Intent intent = getIntent();
         valueUid = intent.getStringExtra("keyUid");
+        setUsetInfo();
         valueAccount = intent.getStringExtra("keyAccountBank");
         valueName = intent.getStringExtra("keyNameBank");
         valueIdBank = intent.getStringExtra("keyIdBank");
         valueBank = intent.getStringExtra("keyBank");
-        valueTelephone= intent.getStringExtra("keyTelephone");
-//        valueMoney = intent.getFloatExtra("keyMoney",0);
-        TextView mTextView = (TextView) findViewById(R.id.mytextview22122);
-        mTextView.setText(valueAccount + "\n\n" + valueName+ "\n\n"+valueIdBank);
+        valueTelephone = intent.getStringExtra("keyTelephone");
+        otpBank();
+        // valueMoney = intent.getFloatExtra("keyMoney",0);
+        TextView mTextView = (TextView) findViewById(R.id.account);
+        mTextView.setText(valueAccount);
+        TextView mTextView1 = (TextView) findViewById(R.id.full_name);
+        mTextView1.setText(valueName);
+        TextView mTextView2 = (TextView) findViewById(R.id.fullid);
+        mTextView2.setText(valueIdBank);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String txt_VerOT = txtVerOTP.getEditText().getText().toString();
-                if(TextUtils.isEmpty(txt_VerOT)){
+                if (TextUtils.isEmpty(txt_VerOT)) {
                     Toast.makeText(OTPBank.this, "please enter the OTP code", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                } else {
                     verifyCode(txt_VerOT);
                 }
 
@@ -84,20 +90,24 @@ public class OTPBank extends AppCompatActivity {
         // calling sign in method.
         signInWithCredential(credential);
     }
+
     private void addDataBankFirebase() {
-            createBankLinkUserFireBase();
-            addDatatoFirebase();
+        createBankLinkUserFireBase();
+        addDatatoFirebase();
     }
 
     private DatabaseReference databaseReference;
     private DatabaseReference databaseReferenceName;
+
     private void createBankLinkUserFireBase() {
-        databaseReferenceName = FirebaseDatabase.getInstance().getReference().child("BankLink").child(valueBank).child(valueUid);
+        databaseReferenceName = FirebaseDatabase.getInstance().getReference().child("BankLink").child(valueBank)
+                .child(valueUid);
         databaseReferenceName.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 databaseReferenceName.setValue(valueAccount);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(OTPBank.this, "Fail to add data " + error, Toast.LENGTH_SHORT).show();
@@ -105,7 +115,9 @@ public class OTPBank extends AppCompatActivity {
         });
 
     }
+
     private void addDatatoFirebase() {
+
         BankAcount bankAcount = new BankAcount();
         bankAcount.setAccount(valueAccount);
         bankAcount.setBank(valueBank);
@@ -127,12 +139,31 @@ public class OTPBank extends AppCompatActivity {
         });
 
     }
+
     private FirebaseAuth mAuth;
-    private void otpBank(){
+
+    private void otpBank() {
         mAuth = FirebaseAuth.getInstance();
-        String phone = "+84" + "0773059787";
+        String phone = "+84" + valueTelephone;
         sendVerificationCode(phone);
     }
+
+    private void setUsetInfo() {
+        DatabaseReference m2Database;
+        m2Database = FirebaseDatabase.getInstance().getReference().child("Users").child(valueUid);
+        m2Database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                valueBalance = snapshot.child("balance").getValue(Long.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void signInWithCredential(PhoneAuthCredential credential) {
         // inside this method we are checking if
         // the code entered is correct or not.
@@ -141,9 +172,19 @@ public class OTPBank extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            Intent intent = new Intent(OTPBank.this, Deposit.class);
+                            intent.putExtra("keyBank", valueBank);
+                            intent.putExtra("keyId", valueIdBank);
+                            intent.putExtra("keyAccount", valueAccount);
+                            intent.putExtra("keyBalance", valueBalance);
+                            intent.putExtra("success", true);
                             addDataBankFirebase();
                             startActivity(new Intent(OTPBank.this, MainActivity.class));
                             finish();
+                            overridePendingTransition(0, 0);
+                            startActivity(intent);
+
+                            overridePendingTransition(0, 0);
                         } else {
                             // if the code is not correct then we are
                             // displaying an error message to the user.
@@ -154,26 +195,24 @@ public class OTPBank extends AppCompatActivity {
 
     }
 
-
     private void sendVerificationCode(String number) {
         // this method is used for getting
         // OTP on user phone number.
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(number)            // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
-                        .setCallbacks(mCallBack)           // OnVerificationStateChangedCallbacks
-                        .build();
+        PhoneAuthOptions options = PhoneAuthOptions.newBuilder(mAuth)
+                .setPhoneNumber(number) // Phone number to verify
+                .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                .setActivity(this) // Activity (for callback binding)
+                .setCallbacks(mCallBack) // OnVerificationStateChangedCallbacks
+                .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
     // callback method is called on Phone auth provider.
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
-            // initializing our callbacks for on
-            // verification callback method.
-            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+    // initializing our callbacks for on
+    // verification callback method.
+    mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         // below method is used when
         // OTP is sent from Firebase
@@ -182,6 +221,7 @@ public class OTPBank extends AppCompatActivity {
             super.onCodeSent(s, forceResendingToken);
             verificationId = s;
         }
+
         // this method is called when user
         // receive OTP from Firebase.
         @Override
@@ -196,6 +236,7 @@ public class OTPBank extends AppCompatActivity {
                 verifyCode(code);
             }
         }
+
         @Override
         public void onVerificationFailed(@NonNull FirebaseException e) {
             Toast.makeText(OTPBank.this, "OTP code is incorrect", Toast.LENGTH_LONG).show();
