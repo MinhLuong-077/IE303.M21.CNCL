@@ -18,15 +18,15 @@
             android:orientation="horizontal"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/text55"
+                android:id="@+id/gggg"
                 android:drawablePadding="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nguồn tiền \n\nSố tiền"
+                android:text="Source of money \n\nAmount"
                 android:textColor="#908F91"
                 android:textSize="18dp" />
             <TextView
-                android:id="@+id/text5"
+                android:id="@+id/txtBank"
 
                 android:textStyle="bold"
                 android:layout_width="wrap_content"

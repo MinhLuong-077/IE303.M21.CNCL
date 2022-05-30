@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.ewallet.model.BankAcount;
 import com.example.ewallet.model.FireBaseUserBank;
@@ -43,12 +44,14 @@ public class HomeFragment extends Fragment {
 
     private Button depositBtn;
     private FireBaseUserBank fireBaseUserBank = new FireBaseUserBank ();
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase, m2Database;
     private UserFirebase userFirebase = new UserFirebase();
 //    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 //    private String uid= user.getUid();
+
     public HomeFragment() {
         setBankUser();
+        setUsetInfo();
         // Required empty public constructor
     }
 
@@ -91,6 +94,9 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Deposit.class);
                 intent.putExtra("keyBank",fireBaseUserBank.getBank());
+                intent.putExtra("keyId",fireBaseUserBank.getId());
+                intent.putExtra("keyAccount",fireBaseUserBank.getAccount());
+                intent.putExtra("keyBalance",userFirebase.getBalance());
                 startActivity(intent);
 
             }
@@ -105,8 +111,24 @@ public class HomeFragment extends Fragment {
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
                 fireBaseUserBank.setAccount(snapshot.child("account").getValue().toString());
                 fireBaseUserBank.setBank(snapshot.child("bank").getValue().toString());
+                fireBaseUserBank.setId(snapshot.child("id").getValue().toString());
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    private void setUsetInfo(){
+        m2Database = FirebaseDatabase.getInstance().getReference().child("Users").child(userFirebase.getUid());
+        m2Database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                userFirebase.setBalance(snapshot.child("balance").getValue(Long.class));
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

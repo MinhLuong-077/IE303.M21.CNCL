@@ -69,13 +69,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Amount"
-
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="0đ"/>
+                        android:id="@+id/txtAmount"
+                        android:text="0"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,6 +84,7 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn20000Thousand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="200.000đ"
@@ -92,6 +93,7 @@
                         android:layout_margin="2dp"/>
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn50000Thousand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="500.000đ"
@@ -101,6 +103,7 @@
                         android:layout_margin="2dp"/>
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn10000Thousand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1.000.000đ"
