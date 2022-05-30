@@ -130,7 +130,7 @@ public class OTPBank extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private void otpBank(){
         mAuth = FirebaseAuth.getInstance();
-        String phone = "+84" + "0968569549";
+        String phone = "+84" + "0773059787";
         sendVerificationCode(phone);
     }
     private void signInWithCredential(PhoneAuthCredential credential) {
@@ -142,7 +142,7 @@ public class OTPBank extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             addDataBankFirebase();
-                            startActivity(new Intent(OTPBank.this, Deposit.class));
+                            startActivity(new Intent(OTPBank.this, MainActivity.class));
                             finish();
                         } else {
                             // if the code is not correct then we are
