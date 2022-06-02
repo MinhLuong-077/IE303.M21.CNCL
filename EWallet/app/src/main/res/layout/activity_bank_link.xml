@@ -4,24 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".BankLink">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
         tools:context=".BankLinkActivity">
 
-
-        <EditText
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="20dp"
-            android:layout_marginTop="5pt"
-            android:hint="Enter the bank you are looking for"
-            android:minHeight="48dp" />
+            app:queryHint="Enter the bank you are looking for"
+            android:iconifiedByDefault="false"/>
+
 
         <TextView
             android:id="@+id/textDemo"
@@ -33,43 +30,38 @@
             android:textColor="#CFCBD5"
             android:textSize="13sp" />
 
-        <TextView
-            android:id="@+id/bank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10pt"
-            android:text="HOME PAYING BANK"
-            android:textColor="#2B2B2C"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/text3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10pt"
-            android:text="Free deposit and payment"
-            android:textColor="#908F91"
-            android:textSize="13sp" />
-
-
-
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/service">
 
+            <TextView
+                android:id="@+id/bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME PAYING BANK"
+                android:textColor="#2B2B2C"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free deposit and payment"
+                android:textColor="#908F91"
+                android:textSize="13sp"
+                android:layout_marginBottom="10dp"/>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <Button
                     android:id="@+id/BIDV"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_telecom"
@@ -79,8 +71,8 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_payment"
@@ -90,8 +82,8 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_gas_payment"
@@ -101,8 +93,8 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_shopping"
@@ -117,45 +109,45 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_booking"
-                    android:text="TPBank"
+                    android:text="TP   Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_travel"
-                    android:text="VietBank"
+                    android:text="Viet Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_hotel"
-                    android:text="BaoVietBank"
+                    android:text="BaoViet Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_food"
-                    android:text="Sacombank"
+                    android:text="Sacom bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -166,8 +158,8 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_game"
@@ -177,30 +169,30 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_entertainment"
-                    android:text="Saigonbank"
+                    android:text="Saigon bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_saving"
-                    android:text="PVcombank"
+                    android:text="PVcom bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_chart"
@@ -215,8 +207,8 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_heal"
@@ -226,8 +218,8 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_volunteer"
@@ -237,8 +229,8 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_other"
@@ -248,24 +240,28 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_help"
-                    android:text="SeABank"
+                    android:text="SeA Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
             </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/bankte"
-                android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10pt"
                 android:text="INTERNATIONL PAYMENT BANK"
+                android:layout_marginTop="10dp"
                 android:textColor="#2B2B2C"
                 android:textSize="20sp" />
 
@@ -273,28 +269,28 @@
                 android:id="@+id/text5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10pt"
                 android:text="Fee 2000d + 2%/transaction"
                 android:textColor="#908F91"
-                android:textSize="13sp" />
+                android:textSize="13sp"
+                android:layout_marginBottom="10dp"/>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_heal"
-                    android:text="VIBBank"
+                    android:text="VIB Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_volunteer"
@@ -304,23 +300,23 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_other"
-                    android:text="VietCapitalBank"
+                    android:text="VietCapital Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
                     android:drawableTop="@drawable/ic_help"
-                    android:text="SeABank"
+                    android:text="SeA Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -328,10 +324,10 @@
         </TableLayout>
         <TextView
             android:id="@+id/mytextview1"
-            android:layout_marginTop="20dp"
             android:drawableStart="@drawable/ic_baseline_security_24"
             android:drawablePadding="20dp"
-            android:text="Mọi thông tin khách hàng đều được mã hóa để bảo mật thông tin khách hàng."
+            android:layout_marginTop="10dp"
+            android:text="All customer information is encrypted to secure customer information."
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

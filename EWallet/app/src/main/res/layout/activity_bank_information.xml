@@ -22,6 +22,7 @@
         android:drawablePadding="20dp"
         android:text="To make sure the card is still active, NONO will check that your card must have more than 50000 VND (You can use it to pay for services on NONO later)"
         android:layout_width="match_parent"
+        android:padding="10dp"
         android:layout_height="wrap_content" />
 
     <TextView
@@ -38,7 +39,6 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         android:textColor="#000000"
         android:id="@+id/account"
         android:transitionName="Account number"
@@ -54,7 +54,6 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         android:textColor="#000000"
         android:layout_marginTop="15pt"
         android:id="@+id/name"
@@ -72,7 +71,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15pt"
-        android:padding="5dp"
         android:textColor="#000000"
         android:id="@+id/keyId"
         android:transitionName="CMND/CCCD/Passport"
