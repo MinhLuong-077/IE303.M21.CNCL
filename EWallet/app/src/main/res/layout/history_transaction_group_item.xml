@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/parent_item_month_year"
+        android:id="@+id/month_year_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12sp"
@@ -22,7 +22,7 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/child_recyclerview"
+            android:id="@+id/transaction_item_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>

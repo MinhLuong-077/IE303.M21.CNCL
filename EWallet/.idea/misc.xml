@@ -25,11 +25,13 @@
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_transaction_invoice.xml" value="0.264" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_withdraw.xml" value="0.4" />
-        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_history.xml" value="0.25416666666666665" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_history.xml" value="0.1" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_wallet.xml" value="0.2630208333333333" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_child_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_item.xml" value="0.253125" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_parent_item.xml" value="0.2" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_transaction_group_item.xml" value="0.1" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/service.xml" value="0.25416666666666665" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/toolbar.xml" value="0.403125" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.182" />
