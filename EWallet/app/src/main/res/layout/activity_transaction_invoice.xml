@@ -131,9 +131,9 @@
                     android:id="@+id/bank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:text="Techcombank"
-                    android:textSize="18sp"
-                    android:layout_alignParentEnd="true"/>
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/amountlabel"

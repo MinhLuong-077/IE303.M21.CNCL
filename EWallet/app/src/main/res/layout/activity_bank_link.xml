@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_telecom"
+                    android:drawableTop="@drawable/ic_bidv"
                     android:text="BIDV"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_payment"
+                    android:drawableTop="@drawable/ic_agribank"
                     android:text="Agribank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
@@ -86,8 +86,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_gas_payment"
-                    android:text="VietinBank"
+                    android:drawableTop="@drawable/ic_vietinbank"
+                    android:text="Vietin Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -97,57 +97,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_shopping"
-                    android:text="Vietcombank"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#00000000"
-                    android:drawableTop="@drawable/ic_booking"
-                    android:text="TP   Bank"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-                <Button
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#00000000"
-                    android:drawableTop="@drawable/ic_travel"
-                    android:text="Viet Bank"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-                <Button
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#00000000"
-                    android:drawableTop="@drawable/ic_hotel"
-                    android:text="BaoViet Bank"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-                <Button
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#00000000"
-                    android:drawableTop="@drawable/ic_food"
-                    android:text="Sacom bank"
+                    android:drawableTop="@drawable/ic_vietcombank"
+                    android:text="VCB"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -162,8 +113,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_game"
-                    android:text="SHBank"
+                    android:drawableTop="@drawable/ic_tpbank"
+                    android:text="TP Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -173,8 +124,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_entertainment"
-                    android:text="Saigon bank"
+                    android:drawableTop="@drawable/ic_vpbank"
+                    android:text="VP Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -184,7 +135,56 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_saving"
+                    android:drawableTop="@drawable/ic_msb"
+                    android:text="MSB Bank"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/ic_sacombank"
+                    android:text="Sacom Bank"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/ic_shbbank"
+                    android:text="SHB"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/ic_mbbank"
+                    android:text="MB Bank"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/ic_pvcombank"
                     android:text="PVcom bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
@@ -195,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_chart"
+                    android:drawableTop="@drawable/ic_nam_a_bank"
                     android:text="Nam A Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
@@ -211,7 +211,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_heal"
+                    android:drawableTop="@drawable/ic_vib_bank"
                     android:text="VIBBank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
@@ -222,7 +222,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_volunteer"
+                    android:drawableTop="@drawable/ic_techcombank"
                     android:text="Techcombank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
@@ -233,8 +233,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_other"
-                    android:text="VietCapitalBank"
+                    android:drawableTop="@drawable/ic_donga"
+                    android:text="DongA Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -244,7 +244,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_help"
+                    android:drawableTop="@drawable/ic_seabank"
                     android:text="SeA Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
@@ -282,8 +282,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_heal"
-                    android:text="VIB Bank"
+                    android:drawableTop="@drawable/ic_shinhan_bank"
+                    android:text="Shinhan Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -293,8 +293,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_volunteer"
-                    android:text="Techcombank"
+                    android:drawableTop="@drawable/ic_hsbc"
+                    android:text="HSBC"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -304,8 +304,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_other"
-                    android:text="VietCapital Bank"
+                    android:drawableTop="@drawable/ic_the_royal_bank_of_scotland"
+                    android:text="Royal Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
@@ -315,8 +315,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_help"
-                    android:text="SeA Bank"
+                    android:drawableTop="@drawable/ic_citi"
+                    android:text="Citi Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="12sp" />

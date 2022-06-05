@@ -6,6 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ewallet.model.TransactionGroupItem;
+import com.example.ewallet.model.TransactionItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,12 +60,77 @@ public class HistoryFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false);
+        View v = inflater.inflate(R.layout.fragment_history, container, false);
+
+        RecyclerView GroupRecyclerViewItem
+                = (RecyclerView) v.findViewById(R.id.transaction_group_recyclerview);
+
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(getActivity());
+
+        TransactionGroupAdapter
+                transactionGroupAdapter
+                = new TransactionGroupAdapter(
+                        TransactionGroupListItem());
+
+        GroupRecyclerViewItem
+                .setAdapter(transactionGroupAdapter);
+        GroupRecyclerViewItem
+                .setLayoutManager(layoutManager);
+
+        return v;
+    }
+
+    private List<TransactionGroupItem> TransactionGroupListItem()
+    {
+        List<TransactionGroupItem> itemList
+                = new ArrayList<>();
+        // Ae get data tu db xong gan vao trong item duoi day nha
+
+        TransactionGroupItem item
+                = new TransactionGroupItem(
+                "June 2022",
+                      TransactionListItem());
+        itemList.add(item);
+
+        TransactionGroupItem item1
+                = new TransactionGroupItem(
+                "July 2022",
+                TransactionListItem());
+        itemList.add(item1);
+
+        TransactionGroupItem item2
+                = new TransactionGroupItem(
+                "August 2022",
+                TransactionListItem());
+        itemList.add(item2);
+
+        TransactionGroupItem item3
+                = new TransactionGroupItem(
+                "September 2022",
+                TransactionListItem());
+        itemList.add(item3);
+
+        return itemList;
+    }
+
+    private List<TransactionItem> TransactionListItem()
+    {
+        List<TransactionItem> TransactionListItem
+                = new ArrayList<>();
+
+        TransactionListItem.add(new TransactionItem("Chuyen tien cho Son", "8:00 - 05/06/2022", "-150.000"));
+        TransactionListItem.add(new TransactionItem("Chuyen tien cho Luong", "9:00 - 05/06/2022", "-200.000"));
+        TransactionListItem.add(new TransactionItem("Chuyen tien cho Tu", "10:00 - 05/06/2022", "-250.000"));
+        TransactionListItem.add(new TransactionItem("Quan tra no", "11:00 - 05/06/2022", "+1.000.000"));
+
+        return TransactionListItem;
     }
 }

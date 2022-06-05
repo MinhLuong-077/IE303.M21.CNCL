@@ -1,34 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Balance:"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="100.000d"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:background="#ccc" />
 
     <TextView
-        android:id="@+id/service"
+        android:id="@+id/mainservice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Danh mục dịch vụ"
+        android:text="Payment"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:textStyle="bold"/>
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/service">
-
+        android:layout_height="wrap_content">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -50,7 +68,7 @@
                 android:layout_weight="1"
                 android:background="#00000000"
                 android:drawableTop="@drawable/ic_payment"
-                android:text="Payment"
+                android:text="Credit"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
@@ -71,13 +89,27 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#00000000"
-                android:drawableTop="@drawable/ic_shopping"
-                android:text="Shopping"
+                android:drawableTop=""
+                android:text=""
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </TableRow>
+    </TableLayout>
 
+    <TextView
+        android:id="@+id/travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Travel"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -126,7 +158,21 @@
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </TableRow>
+    </TableLayout>
 
+    <TextView
+        android:id="@+id/entertainment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Entertainment"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -148,7 +194,7 @@
                 android:layout_weight="1"
                 android:background="#00000000"
                 android:drawableTop="@drawable/ic_entertainment"
-                android:text="Entertain"
+                android:text="Video"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
@@ -158,8 +204,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#00000000"
-                android:drawableTop="@drawable/ic_saving"
-                android:text="Saving"
+                android:drawableTop="@drawable/ic_shopping"
+                android:text="Shopping"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
@@ -175,7 +221,21 @@
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </TableRow>
+    </TableLayout>
 
+    <TextView
+        android:id="@+id/insurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Insurance"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -196,8 +256,71 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#00000000"
+                android:drawableTop=""
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:drawableTop=""
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:drawableTop=""
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/others"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Others"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
                 android:drawableTop="@drawable/ic_volunteer"
                 android:text="Volunteer"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:drawableTop="@drawable/ic_saving"
+                android:text="Saving"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
@@ -224,7 +347,5 @@
                 android:textColor="@color/black"
                 android:textSize="12sp" />
         </TableRow>
-
     </TableLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

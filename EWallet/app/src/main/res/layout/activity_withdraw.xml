@@ -42,6 +42,7 @@
                         android:padding="10dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/minilogo" />
+
                     <TextView
                         android:id="@id/label"
                         android:layout_width="wrap_content"
@@ -52,6 +53,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@id/mini_logo"/>
+
                     <TextView
                         android:id="@+id/balance"
                         android:layout_width="wrap_content"
@@ -123,7 +125,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Payment method"
+        android:text="Ways to receive money"
         android:textSize="15sp"
         android:textAllCaps="true"
         android:textStyle="bold"
@@ -142,18 +144,18 @@
             android:height="60dp"
             app:icon="@drawable/ic_logo_vietcombank"
             app:iconPadding="20dp"
-            android:text="Vietcombank"
             android:textAllCaps="false"
-            android:textAlignment="textStart"/>
+            android:textAlignment="textStart"
+            android:text="Vietcombank"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddBank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:height="60dp"
-            app:icon="@drawable/add"
+            app:icon="@drawable/ic_home"
             app:iconPadding="20dp"
-            android:text="Add bank"
+            android:text="Withdraw to other bank"
             android:textAllCaps="false"
             android:textAlignment="textStart"
             app:iconTint="@color/primary_light"
@@ -162,20 +164,6 @@
             app:strokeColor="@color/primary_light"
             app:strokeWidth="2dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:height="60dp"
-            app:icon="@drawable/currency"
-            app:iconPadding="20dp"
-            android:text="Deposit at store"
-            android:textAllCaps="false"
-            android:textAlignment="textStart"
-            app:iconTint="@color/primary_light"
-            android:textColor="@color/primary_light"
-            android:backgroundTint="@color/white"
-            app:strokeColor="@color/primary_light"
-            app:strokeWidth="2dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -190,7 +178,7 @@
             android:id="@+id/btnDepositWallet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Deposit" />
+            android:text="Withdraw" />
 
     </LinearLayout>
 
