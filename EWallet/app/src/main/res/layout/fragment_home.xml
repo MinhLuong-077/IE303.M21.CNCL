@@ -105,7 +105,7 @@
                     android:insetTop="0dp"
                     android:insetRight="0dp"
                     android:insetBottom="0dp"
-                    app:icon="@drawable/ic_user"
+                    app:icon="@drawable/ic_notify"
                     app:iconGravity="textStart"
                     app:iconPadding="0dp" />
 
