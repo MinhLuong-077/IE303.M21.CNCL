@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/h_message"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chuyen tien cho ai"/>
+
+    <TextView
+        android:id="@+id/h_datetime"
+        android:layout_below="@id/h_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="8:00 - 4/6/2022"/>
+
+    <TextView
+        android:id="@+id/h_money"
+        android:textColor="@color/black"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-159.000d"/>
+
+</RelativeLayout>
