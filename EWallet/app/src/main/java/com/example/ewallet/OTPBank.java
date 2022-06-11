@@ -58,7 +58,7 @@ public class OTPBank extends AppCompatActivity {
         valueBank = intent.getStringExtra("keyBank");
         valueTelephone= intent.getStringExtra("keyTelephone");
 //        valueMoney = intent.getFloatExtra("keyMoney",0);
-        TextView mTextView = (TextView) findViewById(R.id.mytextview22122);
+        TextView mTextView = (TextView) findViewById(R.id.mytextview221);
         mTextView.setText(valueAccount + "\n\n" + valueName+ "\n\n"+valueIdBank);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

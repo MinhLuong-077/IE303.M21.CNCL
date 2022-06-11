@@ -47,7 +47,7 @@ public class TransactionInvoice extends AppCompatActivity {
         valueType = intent.getIntExtra("keyAdd",0);
         valueAccount = intent.getStringExtra("keyAccount");
         userFirebase.setBalance(intent.getLongExtra("keyBalance",0));
-        TextView mTextView = (TextView) findViewById(R.id.txtBank);
+        TextView mTextView = (TextView) findViewById(R.id.bank);
         mTextView.setText(valueBank + "\n\n" + valueAmount);
         button = findViewById(R.id.btnContinueDepositConfirm);
         button.setOnClickListener(new View.OnClickListener() {
