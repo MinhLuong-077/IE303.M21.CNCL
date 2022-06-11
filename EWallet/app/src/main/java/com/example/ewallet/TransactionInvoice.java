@@ -73,7 +73,6 @@ public class TransactionInvoice extends AppCompatActivity {
         valueID = intent.getStringExtra("keyID");
         valueType = intent.getIntExtra("keyAdd", 0);
         valueAccount = intent.getStringExtra("keyAccount");
-        userFirebase.setBalance(intent.getLongExtra("keyBalance", 0));
         TextView mTextView = (TextView) findViewById(R.id.bank);
         mTextView.setText(valueBank + "\n\n" + valueAmount);
         TextView mTextView1 = (TextView) findViewById(R.id.amount);

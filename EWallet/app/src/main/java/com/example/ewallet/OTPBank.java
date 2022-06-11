@@ -206,9 +206,9 @@ public class OTPBank extends AppCompatActivity {
     // callback method is called on Phone auth provider.
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
-    // initializing our callbacks for on
-    // verification callback method.
-    mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            // initializing our callbacks for on
+            // verification callback method.
+            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         // below method is used when
         // OTP is sent from Firebase

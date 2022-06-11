@@ -26,7 +26,6 @@ public interface ApiBank {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiBank.class);
-
     @GET("bank-account/{account}/{bank}")
     Call<BankAcount> callApiBank(@Path("account") String accountId, @Path("bank") String bank);
     // @GET("sms")
@@ -37,7 +36,7 @@ public interface ApiBank {
 
     @PUT("bank-account/{account}/{bank}/{userid}/update/money")
     Call<PutData> updateUser(@Path("account") String accountId, @Path("bank") String bank,
-            @Path("userid") String userid, @Body PutData putData);
+                             @Path("userid") String userid, @Body PutData putData);
 
     @POST("users/transaction/create")
     Call<TransactionBankingAPI> createTransaction(@Body TransactionBankingAPI transactionBankingAPI);
