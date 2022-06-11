@@ -56,7 +56,7 @@ import retrofit2.Response;
 
 public class TransactionInvoice extends AppCompatActivity {
     private Button button;
-    private String valueBank, valueID, valueAccount;
+    private String valueBank, valueID, valueAccount, valueName;
     private Boolean success = false;
     private Long valueAmount;
     private UserFirebase userFirebase = new UserFirebase();
@@ -68,6 +68,7 @@ public class TransactionInvoice extends AppCompatActivity {
         setContentView(R.layout.activity_transaction_invoice);
         Intent intent = getIntent();
         valueBank = intent.getStringExtra("keyBankTwo");
+        valueName = intent.getStringExtra("keyName");
         valueAmount = intent.getLongExtra("keyAmount", 0);
         valueID = intent.getStringExtra("keyID");
         valueType = intent.getIntExtra("keyAdd", 0);
@@ -77,6 +78,7 @@ public class TransactionInvoice extends AppCompatActivity {
         mTextView.setText(valueBank + "\n\n" + valueAmount);
         TextView mTextView1 = (TextView) findViewById(R.id.amount);
         mTextView1.setText(Long.toString(valueAmount));
+
         button = findViewById(R.id.btnContinueDepositConfirm);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,12 +88,7 @@ public class TransactionInvoice extends AppCompatActivity {
             }
         });
     }
-
-    // private void createTransaction() {
-    // if(success){
-    //
-    // }
-    // }
+    private UUID uuid = UUID.randomUUID();
     private void transactionFirebaseUser() {
         if (valueType == 1 | valueType == 2) {
             Long sumBalance;
@@ -111,7 +108,6 @@ public class TransactionInvoice extends AppCompatActivity {
             transactionFirebaseUser.setBank(valueBank);
             transactionFirebaseUser.setAccount(valueAccount);
             transactionFirebaseUser.setMoney(valueAmount);
-            UUID uuid = UUID.randomUUID();
             transactionFirebaseUser.setId(uuid.toString());
             Date currentTime = Calendar.getInstance().getTime();
             transactionFirebaseUser.setTime(getDateStringOne(currentTime));
@@ -138,6 +134,8 @@ public class TransactionInvoice extends AppCompatActivity {
         String strI = String.valueOf(valueType);
         updateResponse.setStatus(strI);
         updateResponse.setMoney(valueAmount);
+        Toast.makeText( TransactionInvoice.this, "Maximum " +valueAccount + valueBank + valueID,
+                Toast.LENGTH_SHORT).show();
         Call<PutData> call = ApiBank.apibank.updateUser(valueAccount, valueBank, valueID, updateResponse);
         call.enqueue(new Callback<PutData>() {
             @Override
@@ -153,39 +151,27 @@ public class TransactionInvoice extends AppCompatActivity {
                 success = false;
             }
         });
-        // ApiBank.apibank.updateUser(valueAccount,valueBank,valueID, updateResponse);
-        // ApiBank.apibank.updateUser(valueAccount,valueBank,valueID,updateResponse).enqueue(new
-        // Callback<BankAcount>() {
-        // @Override
-        // public void onResponse(Call<BankAcount> call, Response<BankAcount> response)
-        // {
-        //
-        // }
-        //
-        // @Override
-        // public void onFailure(Call<BankAcount> call, Throwable t) {
-        //
-        // }
-        // });
 
     }
 
     private void transactionBank() {
         TransactionBankingAPI transactionBankingAPI = new TransactionBankingAPI();
-        transactionBankingAPI.setUserId("1sdsasds");
-        transactionBankingAPI.setID("233");
-        // String dateString = "23-04-2005 23:11:59";
-        // DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
-        // String date = df.format(Calendar.getInstance().getTime());
+        if (valueType == 1) {
+            transactionBankingAPI.setStatus("Deposit");
+            transactionBankingAPI.setMessage("Deposit successful????");
+        }
+        if (valueType == 2) {
+            transactionBankingAPI.setStatus("Withdraw");
+            transactionBankingAPI.setMessage("Deposit successful????");
 
-        transactionBankingAPI.setDdate(new Date());
-        transactionBankingAPI.setName("Nguyen Van");
-        transactionBankingAPI.setAccount("09685566565");
-        transactionBankingAPI.setBank("LUONG");
-        transactionBankingAPI.setMoney(50000000);
-        transactionBankingAPI.setStatus("get");
-        transactionBankingAPI.setMessage("ALO");
-        // date: "2021-08-25 09:50:24"
+        }
+        transactionBankingAPI.setUserId(valueID);
+        transactionBankingAPI.setID(uuid.toString());
+        transactionBankingAPI.setDate(Calendar.getInstance().getTime());
+        transactionBankingAPI.setName(valueName);
+        transactionBankingAPI.setAccount(valueAccount);
+        transactionBankingAPI.setBank(valueBank);
+        transactionBankingAPI.setMoney(valueAmount);
 
         Call<TransactionBankingAPI> call = ApiBank.apibank.createTransaction(transactionBankingAPI);
         call.enqueue(new Callback<TransactionBankingAPI>() {
@@ -196,24 +182,8 @@ public class TransactionInvoice extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<TransactionBankingAPI> call, Throwable t) {
-
             }
         });
-        // ApiBank.apibank.updateUser(valueAccount,valueBank,valueID, updateResponse);
-        // ApiBank.apibank.updateUser(valueAccount,valueBank,valueID,updateResponse).enqueue(new
-        // Callback<BankAcount>() {
-        // @Override
-        // public void onResponse(Call<BankAcount> call, Response<BankAcount> response)
-        // {
-        //
-        // }
-        //
-        // @Override
-        // public void onFailure(Call<BankAcount> call, Throwable t) {
-        //
-        // }
-        // });
-        return true;
     }
 
     private static final String DATE_FORMAT = "dd-MM-yyyy";
@@ -230,17 +200,4 @@ public class TransactionInvoice extends AppCompatActivity {
         return format.format(date);
     }
 
-    private static final String DATE_FORMAT = "dd-MM-yyyy";
-
-    public static String getDateString(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT);
-        return format.format(date);
-    }
-
-    private static final String DATE_FORMATONE = "yyyy-MM-dd HH:mm:ss";
-
-    public static String getDateStringOne(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat(DATE_FORMATONE);
-        return format.format(date);
-    }
 }

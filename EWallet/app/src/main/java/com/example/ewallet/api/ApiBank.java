@@ -22,7 +22,7 @@ import retrofit2.http.Path;
 public interface ApiBank {
     Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
     ApiBank apibank = new Retrofit.Builder()
-            .baseUrl("http://10.0.130.62:8080/stock.com/api/v1/")
+            .baseUrl("http://172.31.48.1:8080/stock.com/api/v1/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiBank.class);

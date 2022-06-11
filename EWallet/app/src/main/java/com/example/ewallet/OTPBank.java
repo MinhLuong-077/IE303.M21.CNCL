@@ -179,12 +179,8 @@ public class OTPBank extends AppCompatActivity {
                             intent.putExtra("keyBalance", valueBalance);
                             intent.putExtra("success", true);
                             addDataBankFirebase();
-                            startActivity(new Intent(OTPBank.this, MainActivity.class));
+                            startActivity(new Intent(OTPBank.this, Deposit.class));
                             finish();
-                            overridePendingTransition(0, 0);
-                            startActivity(intent);
-
-                            overridePendingTransition(0, 0);
                         } else {
                             // if the code is not correct then we are
                             // displaying an error message to the user.

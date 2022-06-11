@@ -45,7 +45,6 @@ public class BankLink extends AppCompatActivity implements View.OnClickListener 
 
 
     }
-
     private void createData(Button button) {
         Intent intent = new Intent(BankLink.this, BankInformation.class);
         intent.putExtra("keyBank",button.getText().toString());

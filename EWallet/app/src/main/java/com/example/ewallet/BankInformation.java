@@ -66,6 +66,7 @@ public class BankInformation extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                checkBankUser();
                 account = findViewById(R.id.account);
                 name = findViewById(R.id.name);
                 keyId = findViewById(R.id.keyId);
@@ -74,7 +75,7 @@ public class BankInformation extends AppCompatActivity {
                 txt_keyId = keyId.getEditText().getText().toString();
                  if(checkInputInformation()){
                      checkBankExist();
-                     clickCallApiBank();
+
                  }
                  else
                  {
@@ -176,8 +177,8 @@ public class BankInformation extends AppCompatActivity {
 
                     if(txt_account.equalsIgnoreCase(dataSnapshot.getValue().toString())){
                         success = true;
-                        break;
                     }
+                    clickCallApiBank();
                 }
             }
             @Override

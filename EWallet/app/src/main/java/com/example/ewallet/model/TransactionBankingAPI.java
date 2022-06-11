@@ -1,5 +1,7 @@
 package com.example.ewallet.model;
 
+import java.util.Date;
+
 public class TransactionBankingAPI {
     // UserId string `gorm:"primaryKey;not null"`
     // ID string `gorm:"primaryKey;type:varchar(50)"`
@@ -12,7 +14,7 @@ public class TransactionBankingAPI {
     // Message string `gorm:"type:varchar(255)"`
     private String UserId;
     private String ID;
-    private Date Ddate;
+    private Date Date;
     private String Name;
     private String Account;
     private String Bank;
@@ -36,12 +38,12 @@ public class TransactionBankingAPI {
         this.ID = ID;
     }
 
-    public Date getDdate() {
-        return Ddate;
+    public Date getDate() {
+        return Date;
     }
 
-    public void setDdate(Date ddate) {
-        Ddate = ddate;
+    public void setDate(Date date) {
+        Date = date;
     }
 
     public String getStatus() {
