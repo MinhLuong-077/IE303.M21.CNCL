@@ -14,7 +14,7 @@
         android:theme="@style/Theme.EWallet"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".withdraw"
+            android:name=".Withdraw"
             android:exported="false" />
         <activity
             android:name=".Deposit"

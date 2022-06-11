@@ -71,6 +71,7 @@
                     android:textSize="12sp" />
 
                 <Button
+                    android:id="@+id/Agribank"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -82,6 +83,7 @@
                     android:textSize="12sp" />
 
                 <Button
+                    android:id="@+id/VietinBank"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -173,7 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#00000000"
-                    android:drawableTop="@drawable/ic_mbbank"
+                    android:drawableTop="@drawable/ic_shbbank"
                     android:text="MB Bank"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
