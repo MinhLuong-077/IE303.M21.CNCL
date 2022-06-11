@@ -59,6 +59,7 @@
                     android:layout_weight="1"
                     android:text="Số tài khoản"/>
                 <TextView
+                    android:id="@+id/account"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -76,6 +77,7 @@
                     android:layout_weight="1"
                     android:text="Họ và tên khách hàng"/>
                 <TextView
+                    android:id="@+id/full_name"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -93,6 +95,7 @@
                     android:layout_weight="1"
                     android:text="CMND/CCCD/Hộ chiếu"/>
                 <TextView
+                    android:id="@+id/fullid"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

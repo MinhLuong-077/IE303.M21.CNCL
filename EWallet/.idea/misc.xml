@@ -13,6 +13,19 @@
         <entry key="..\:/Java/Final/IE303/EWallet/app/src/main/res/layout/fragment_home.xml" value="0.21195652173913043" />
         <entry key="..\:/Java/Final/IE303/EWallet/app/src/main/res/layout/fragment_wallet.xml" value="0.21195652173913043" />
         <entry key="..\:/Java/Final/IE303/EWallet/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/ic_mbbank.xml" value="0.1745" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_bank_link.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_deposit.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_flash.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_login.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_register.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_withdraw.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_history.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_home.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_wallet.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_transaction_group_item.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_transaction_item.xml" value="0.2509057971014493" />
+        <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/service.xml" value="0.18802083333333333" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/bidv.xml" value="0.1715" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/ic_vietcombank.xml" value="0.2595" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/minilogo.xml" value="0.156" />

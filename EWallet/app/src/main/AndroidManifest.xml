@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true">
 <<<<<<< Updated upstream
         <activity
-            android:name=".withdraw"
+            android:name=".Withdraw"
             android:exported="false" />
 =======
 >>>>>>> Stashed changes
