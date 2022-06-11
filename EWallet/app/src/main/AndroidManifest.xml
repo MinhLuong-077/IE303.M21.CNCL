@@ -13,12 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EWallet"
         android:usesCleartextTraffic="true">
-<<<<<<< Updated upstream
         <activity
             android:name=".Withdraw"
             android:exported="false" />
-=======
->>>>>>> Stashed changes
         <activity
             android:name=".Deposit"
             android:exported="false"
@@ -35,23 +32,8 @@
             android:parentActivityName=".BankLink" />
         <activity
             android:name=".BankLink"
-<<<<<<< Updated upstream
-            android:exported="false">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-=======
             android:exported="false"
             android:parentActivityName=".Deposit">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
->>>>>>> Stashed changes
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".EditInfoActivity"
