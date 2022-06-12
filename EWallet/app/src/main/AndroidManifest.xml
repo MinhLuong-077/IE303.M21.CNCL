@@ -14,6 +14,12 @@
         android:theme="@style/Theme.EWallet"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".WaterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ElectricityActivity"
+            android:exported="false" />
+        <activity
             android:name=".GasPayActivity"
             android:exported="false" />
         <activity
