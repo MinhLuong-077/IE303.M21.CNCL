@@ -27,6 +27,8 @@
         <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_transaction_item.xml" value="0.2509057971014493" />
         <entry key="..\:/Java/IE103 test/IE303/IE303.M21.CNCL/EWallet/app/src/main/res/layout/service.xml" value="0.18802083333333333" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/bidv.xml" value="0.1715" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/ic_bidv.xml" value="0.1615" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/ic_close.xml" value="0.1615" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/ic_vietcombank.xml" value="0.2595" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/drawable/minilogo.xml" value="0.156" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_bank_information.xml" value="0.25416666666666665" />
@@ -37,6 +39,7 @@
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_otpbank.xml" value="0.2" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_telecom.xml" value="0.16532258064516128" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_transaction_invoice.xml" value="0.264" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/activity_withdraw.xml" value="0.4" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/fragment_history.xml" value="0.1" />
@@ -46,6 +49,7 @@
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_item.xml" value="0.253125" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_parent_item.xml" value="0.2" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/history_transaction_group_item.xml" value="0.1" />
+        <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/layout_bottom_sheet.xml" value="0.1" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/service.xml" value="0.25416666666666665" />
         <entry key="..\:/Java/nonowaller/IE303.M21.CNCL/EWallet/app/src/main/res/layout/toolbar.xml" value="0.403125" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.182" />
