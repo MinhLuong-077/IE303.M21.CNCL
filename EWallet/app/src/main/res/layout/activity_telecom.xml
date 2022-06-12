@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelecomActivity"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:id="@+id/bottomSheetContainer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+        <TextView
+            android:id="@+id/labelno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Network operator selected:" />
+        <TextView
+            android:id="@+id/network"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:text="Viettel"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/viettel"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:drawableTop="@drawable/ic_viettel"
+                android:text="Viettel"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/mobifone"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:drawableTop="@drawable/ic_mobifone"
+                android:text="Mobifone"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/vinafone"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:drawableTop="@drawable/ic_vinaphone"
+                android:text="Vina phone"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/vietnamobile"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:drawableTop="@drawable/ic_vietnamobile"
+                android:text="Vietnam mobile"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recharge phone"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn10k"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.000đ"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20.000đ"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50.000đ"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100.000đ"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200.000đ"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500.000đ"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data 3G/4G"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data in 7 days"
+            android:paddingBottom="20dp"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500MB / 7 Days \n 7.000đ"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1GB / 7 Days \n 10.000đ"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3GB / 7 Days \n 15.000đ"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5GB / 7 Days \n 30.000đ"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+        </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data in 30 days"
+            android:paddingVertical="20dp"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200MB / Month \n 10.000đ"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500MB / Month \n 15.000đ"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1GB / Month \n 25.000đ"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2GB / Month \n 50.000đ"
+                android:textAllCaps="false"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
