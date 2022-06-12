@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ElectricityActivity"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/logoevn"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:background="@drawable/ic_evn"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Vietnam Electronic"
+            android:layout_gravity="center_vertical"
+            android:textAlignment="textEnd"
+            android:textSize="36sp"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Customer ID:"
+        android:paddingVertical="20dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/customer_id"
+        android:transitionName="ID"
+        android:hint="Customer ID"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guide:"
+        android:paddingVertical="20dp"/>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        android:background="@drawable/mkh"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:layout_marginTop="20dp"/>
+
+
+</LinearLayout>
