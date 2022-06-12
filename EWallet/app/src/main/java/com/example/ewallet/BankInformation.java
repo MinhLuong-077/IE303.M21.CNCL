@@ -66,6 +66,7 @@ public class BankInformation extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                checkBankUser();
                 account = findViewById(R.id.account);
                 name = findViewById(R.id.name);
                 keyId = findViewById(R.id.keyId);
@@ -74,7 +75,7 @@ public class BankInformation extends AppCompatActivity {
                 txt_keyId = keyId.getEditText().getText().toString();
                  if(checkInputInformation()){
                      checkBankExist();
-                     clickCallApiBank();
+
                  }
                  else
                  {
@@ -115,7 +116,6 @@ public class BankInformation extends AppCompatActivity {
                     String txt_accountBank = bankAcount.getAccount();
                     String txt_nameBank = bankAcount.getName();
                     String txt_IdBank = bankAcount.getID();
-
                     if(checkBankInformationUser(txt_accountBank,txt_nameBank,txt_IdBank)){
                        if(bankAcount.getMoney()>=minimumMoney){
                            if(!success){
@@ -128,6 +128,7 @@ public class BankInformation extends AppCompatActivity {
                                intent.putExtra("keyTelephone",bankAcount.getTelephone());
 //                               intent.putExtra("keyMoney",bankAcount.getMoney());
                                startActivity(intent);
+                               finish();
                            }
                            else {
                                Toast.makeText(BankInformation.this,"Account already linked", Toast.LENGTH_SHORT).show();
@@ -176,8 +177,8 @@ public class BankInformation extends AppCompatActivity {
 
                     if(txt_account.equalsIgnoreCase(dataSnapshot.getValue().toString())){
                         success = true;
-                        break;
                     }
+                    clickCallApiBank();
                 }
             }
             @Override

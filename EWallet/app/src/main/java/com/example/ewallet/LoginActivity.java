@@ -1,5 +1,6 @@
 package com.example.ewallet;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -14,7 +16,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,9 +56,38 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String txt_email = email.getEditText().getText().toString();
                 String txt_password = password.getEditText().getText().toString();
-                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
-                    Toast.makeText(LoginActivity.this, "Empty credential", Toast.LENGTH_SHORT).show();
-                } else {
+
+
+//                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
+//                    Toast.makeText(LoginActivity.this, "Empty credential", Toast.LENGTH_SHORT).show();
+//                }
+                if(TextUtils.isEmpty(txt_email)) {
+                    email.getEditText().setError("Full name is required!");
+                    email.getEditText().requestFocus();
+                    email.getEditText().setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                            email.getEditText().setError(null);
+                            email.getEditText().clearFocus();
+                            return false;
+                        }
+                    });
+                }
+                else if(TextUtils.isEmpty(txt_password)) {
+                    password.setEndIconVisible(false);
+                    password.getEditText().setError("Full name is required!");
+                    password.getEditText().requestFocus();
+                    password.getEditText().setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View view, MotionEvent motionEvent) {
+                            password.setEndIconVisible(true);
+                            password.getEditText().setError(null);
+                            password.getEditText().clearFocus();
+                            return false;
+                        }
+                    });
+                }
+                else {
                     loginUser(txt_email, txt_password);
                 }
             }
@@ -77,12 +110,25 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
     private void loginUser(String email, String password) {
-        auth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//        auth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//            @Override
+//            public void onSuccess(AuthResult authResult) {
+//                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                finish();
+//            }
+//        });
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onSuccess(AuthResult authResult) {
-                Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                finish();
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

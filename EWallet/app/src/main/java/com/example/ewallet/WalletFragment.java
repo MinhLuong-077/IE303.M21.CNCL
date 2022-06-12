@@ -40,7 +40,7 @@ public class WalletFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button logout;
+    private Button logout, edit;
     private FirebaseUser user;
     private DatabaseReference reference;
     private String id;
@@ -88,6 +88,13 @@ public class WalletFragment extends Fragment {
                 startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
+        edit = v.findViewById((R.id.editBtn));
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), EditInfoActivity.class));
+            }
+        });
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         id = user.getUid();
@@ -123,6 +130,7 @@ public class WalletFragment extends Fragment {
 
             }
         });
+
         return v;
     }
 }

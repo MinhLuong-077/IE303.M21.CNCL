@@ -29,11 +29,12 @@
             android:name=".TelecomActivity"
             android:exported="false" />
         <activity
-            android:name=".withdraw"
+            android:name=".Withdraw"
             android:exported="false" />
         <activity
             android:name=".Deposit"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TransactionInvoice"
             android:exported="false" />
@@ -42,18 +43,16 @@
             android:exported="false" />
         <activity
             android:name=".BankInformation"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".BankLink" />
         <activity
             android:name=".BankLink"
-            android:exported="false">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            android:exported="false"
+            android:parentActivityName=".Deposit">
         </activity>
+        <activity
+            android:name=".EditInfoActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".FlashActivity"
             android:exported="true">
