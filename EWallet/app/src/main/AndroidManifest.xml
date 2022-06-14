@@ -30,7 +30,8 @@
             android:exported="false" />
         <activity
             android:name=".Withdraw"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Deposit"
             android:exported="false"

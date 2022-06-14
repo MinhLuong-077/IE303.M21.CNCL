@@ -32,9 +32,9 @@
         android:paddingVertical="20dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/customer_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/customer_id"
         android:transitionName="ID"
         android:hint="Customer ID"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -58,6 +58,7 @@
         android:layout_gravity="center_horizontal"/>
 
     <Button
+        android:id="@+id/checkBill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Check"

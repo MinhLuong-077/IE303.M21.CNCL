@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ewallet.model.BankAcount;
@@ -42,10 +43,13 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private boolean type = true;
-    private Button depositBtn, withdrawBtn;
+    private Button depositBtn, withdrawBtn, paymentBtn, telecomBtn;
     private FireBaseUserBank fireBaseUserBank = new FireBaseUserBank();
     private DatabaseReference mDatabase, m2Database;
     private UserFirebase userFirebase = new UserFirebase();
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String id;
     // FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     // private String uid= user.getUid();
 
@@ -104,7 +108,34 @@ public class HomeFragment extends Fragment {
                 setUsetInfo();
             }
         });
-
+        paymentBtn = v.findViewById(R.id.paymentbtn);
+        paymentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PaymentActivity.class));
+            }
+        });
+        final TextView txt_balance = v.findViewById(R.id.balance);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        id = user.getUid();
+        reference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Long balance = snapshot.child("balance").getValue(Long.class);
+                txt_balance.setText(balance.toString() + "d");
+            };
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        telecomBtn = v.findViewById(R.id.telecom);
+        telecomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), TelecomActivity.class));
+            }
+        });
         return v;
     }
 
@@ -119,13 +150,13 @@ public class HomeFragment extends Fragment {
                     fireBaseUserBank.setBank(snapshot.child("bank").getValue().toString());
                     fireBaseUserBank.setId(snapshot.child("id").getValue().toString());
                     fireBaseUserBank.setName(snapshot.child("name").getValue().toString());
+                    Long balance = snapshot.child("balance").getValue(Long.class);
                     if(type == true){
                         putActivityDeposit();
                     }
                     else{
                         putActivityWithdraw();;
                     }
-
                 }
                 else{
                     if(type == true){
@@ -146,9 +177,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
-
-
     }
 
     private void setUsetInfo() {
@@ -161,10 +189,8 @@ public class HomeFragment extends Fragment {
                 }
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-
                 }
             });
-
     }
     private void putActivityWithdraw(){
         Intent intent = new Intent(getActivity(),  Withdraw.class);
