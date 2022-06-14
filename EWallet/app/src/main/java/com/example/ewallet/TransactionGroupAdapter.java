@@ -51,7 +51,7 @@ public class TransactionGroupAdapter
                         transactionGroupViewHolder
                                 .ItemRecyclerView
                                 .getContext(),
-                        LinearLayoutManager.HORIZONTAL,
+                        LinearLayoutManager.VERTICAL,
                         false);
 
         layoutManager.setInitialPrefetchItemCount(

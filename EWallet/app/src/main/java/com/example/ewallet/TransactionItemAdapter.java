@@ -21,6 +21,7 @@ public class TransactionItemAdapter extends RecyclerView.Adapter<TransactionItem
         this.TransactionListItem = transactionListItem;
     }
 
+
     @NonNull
     @Override
     public TransactionViewHolder onCreateViewHolder(

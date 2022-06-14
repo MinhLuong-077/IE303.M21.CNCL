@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:id="@+id/viettel"
+                android:id="@+id/elecbtn"
                 android:layout_width="150dp"
                 android:layout_height="80dp"
                 android:drawableLeft="@drawable/ic_bulb"
@@ -35,6 +35,7 @@
                 android:layout_marginHorizontal="20dp"/>
 
             <Button
+                android:id="@+id/waterbtn"
                 android:layout_height="80dp"
                 android:layout_width="150dp"
                 android:layout_weight="1"

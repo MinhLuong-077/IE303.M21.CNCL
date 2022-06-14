@@ -5,14 +5,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ewallet.model.TransactionGroupItem;
 import com.example.ewallet.model.TransactionItem;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -30,8 +39,15 @@ public class HistoryFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String id;
+    private  List<TransactionGroupItem> itemList
+            = new ArrayList<>();
+    List<TransactionItem> TransactionListItem
+            = new ArrayList<>();
     public HistoryFragment() {
+
         // Required empty public constructor
     }
 
@@ -69,68 +85,68 @@ public class HistoryFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_history, container, false);
 
-        RecyclerView GroupRecyclerViewItem
-                = (RecyclerView) v.findViewById(R.id.transaction_group_recyclerview);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("BankingTransaction");
+        id = user.getUid();
+        reference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String date = snapshot.getKey().toString();
+                    for (DataSnapshot snapshot1 : dataSnapshot.child(date).getChildren()){
+                        String message = snapshot1.child("type").getValue().toString();
+                        String time = snapshot1.child("time").getValue().toString();
+                        String money = snapshot1.child("money").getValue().toString();
+                        TransactionListItem.add(new TransactionItem(message , time, money));
+                    }
+                    TransactionGroupItem item
+                            = new TransactionGroupItem(
+                            date,
+                            TransactionListItem);
+                    itemList.add(item);
+                    Collections.reverse(itemList);
+                }
+                RecyclerView GroupRecyclerViewItem
+                        = (RecyclerView) v.findViewById(R.id.transaction_group_recyclerview);
 
-        LinearLayoutManager layoutManager
-                = new LinearLayoutManager(getActivity());
+                LinearLayoutManager layoutManager
+                        = new LinearLayoutManager(getActivity());
 
-        TransactionGroupAdapter
-                transactionGroupAdapter
-                = new TransactionGroupAdapter(
-                        TransactionGroupListItem());
+                TransactionGroupAdapter
+                        transactionGroupAdapter
+                        = new TransactionGroupAdapter(
+                        TransactionGroupListItem(itemList));
 
-        GroupRecyclerViewItem
-                .setAdapter(transactionGroupAdapter);
-        GroupRecyclerViewItem
-                .setLayoutManager(layoutManager);
+                GroupRecyclerViewItem
+                        .setAdapter(transactionGroupAdapter);
+                GroupRecyclerViewItem
+                        .setLayoutManager(layoutManager);
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
         return v;
     }
 
-    private List<TransactionGroupItem> TransactionGroupListItem()
+
+    private List<TransactionGroupItem> TransactionGroupListItem(List itemList)
     {
-        List<TransactionGroupItem> itemList
-                = new ArrayList<>();
-        // Ae get data tu db xong gan vao trong item duoi day nha
-
-        TransactionGroupItem item
-                = new TransactionGroupItem(
-                "June 2022",
-                      TransactionListItem());
-        itemList.add(item);
-
-        TransactionGroupItem item1
-                = new TransactionGroupItem(
-                "July 2022",
-                TransactionListItem());
-        itemList.add(item1);
-
-        TransactionGroupItem item2
-                = new TransactionGroupItem(
-                "August 2022",
-                TransactionListItem());
-        itemList.add(item2);
-
-        TransactionGroupItem item3
-                = new TransactionGroupItem(
-                "September 2022",
-                TransactionListItem());
-        itemList.add(item3);
-
         return itemList;
     }
-
-    private List<TransactionItem> TransactionListItem()
-    {
-        List<TransactionItem> TransactionListItem
-                = new ArrayList<>();
-
-        TransactionListItem.add(new TransactionItem("Chuyen tien cho Son", "8:00 - 05/06/2022", "-150.000"));
-        TransactionListItem.add(new TransactionItem("Chuyen tien cho Luong", "9:00 - 05/06/2022", "-200.000"));
-        TransactionListItem.add(new TransactionItem("Chuyen tien cho Tu", "10:00 - 05/06/2022", "-250.000"));
-        TransactionListItem.add(new TransactionItem("Quan tra no", "11:00 - 05/06/2022", "+1.000.000"));
-
-        return TransactionListItem;
-    }
+//
+//    private List<TransactionItem> TransactionListItem()
+//    {
+//        List<TransactionItem> TransactionListItem
+//                = new ArrayList<>();
+//
+//        TransactionListItem.add(new TransactionItem("Chuyen tien cho Son", "8:00 - 05/06/2022", "-150.000"));
+//        TransactionListItem.add(new TransactionItem("Chuyen tien cho Luong", "9:00 - 05/06/2022", "-200.000"));
+//        TransactionListItem.add(new TransactionItem("Chuyen tien cho Tu", "10:00 - 05/06/2022", "-250.000"));
+//        TransactionListItem.add(new TransactionItem("Quan tra no", "11:00 - 05/06/2022", "+1.000.000"));
+//
+//        return TransactionListItem;
+//    }
 }
