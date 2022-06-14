@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private boolean type = true;
-    private Button depositBtn, withdrawBtn, paymentBtn, telecomBtn;
+    private Button depositBtn, withdrawBtn, paymentBtn, telecomBtn, cryptoBtn;
     private FireBaseUserBank fireBaseUserBank = new FireBaseUserBank();
     private DatabaseReference mDatabase, m2Database;
     private UserFirebase userFirebase = new UserFirebase();
@@ -134,6 +134,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), TelecomActivity.class));
+            }
+        });
+        cryptoBtn = v.findViewById(R.id.cryptoBtn);
+        cryptoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), CryptoService.class));
             }
         });
         return v;

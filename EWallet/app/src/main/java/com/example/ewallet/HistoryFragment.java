@@ -121,7 +121,6 @@ public class HistoryFragment extends Fragment {
                         .setAdapter(transactionGroupAdapter);
                 GroupRecyclerViewItem
                         .setLayoutManager(layoutManager);
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

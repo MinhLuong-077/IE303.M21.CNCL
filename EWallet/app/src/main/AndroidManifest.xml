@@ -14,6 +14,9 @@
         android:theme="@style/Theme.EWallet"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".CryptoService"
+            android:exported="false" />
+        <activity
             android:name=".WaterActivity"
             android:exported="false" />
         <activity
@@ -49,11 +52,10 @@
         <activity
             android:name=".BankLink"
             android:exported="false"
-            android:parentActivityName=".Deposit">
-        </activity>
+            android:parentActivityName=".Deposit"></activity>
         <activity
             android:name=".EditInfoActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".FlashActivity"
             android:exported="true">
